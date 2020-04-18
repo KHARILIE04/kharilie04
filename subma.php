@@ -46,7 +46,7 @@ echo color("green"," =================================== \n");
 			otp:
 			echo color("nevy","?] OTP : ");
 			$otp = trim(fgets(STDIN));
-			$data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"83415d06-ec4e-11e6-a41b-6c40088ab51e"}';
+			$data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":""}';
 			$verif = request("/v5/customers/phone/verify", null, $data1);
 			if(strpos($verif, '"access_token"')){
 				echo color("green","+] Register Success\n");
@@ -60,7 +60,7 @@ echo color("green"," =================================== \n");
 				echo "\n".color("yellow","!] Please wait...");
 				for($a=1;$a<=3;$a++){
 					echo color("yellow",".");
-					sleep(1);
+					sleep(2);
 				}
 				$code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD160420A"}');
 				$message = fetch_value($code1,'"message":"','"');
@@ -74,7 +74,7 @@ echo color("green"," =================================== \n");
 					echo "\n".color("yellow","!] Please wait...");
 					for($a=1;$a<=3;$a++){
 						echo color("yellow",".");
-						sleep(1);
+						sleep(2);
 					}
 					sleep(3);
 					$boba10 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD160420B"}');
@@ -84,30 +84,8 @@ echo color("green"," =================================== \n");
 						goto goride;
 					}else{
 						echo "\n".color("red","-] Message: ".$messageboba10);
-					}
-					goride:
-					echo "\n".color("yellow","!] Claim Voc burger orins ");
-					echo "\n".color("yellow","!] Please wait...");
-					for($a=1;$a<=3;$a++){
-						echo color("yellow",".");
-						sleep(1);
-					}
-					sleep(3);
-					$goride = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAINGOPAY"}');
-					$message1 = fetch_value($goride,'"message":"','"');
-					echo "\n".color("green","+] Message: ".$message1);
-							
-					echo "\n".color("yellow","!] Claim Voc UPNORMAL");
-					echo "\n".color("yellow","!] Please wait...");
-					for($a=1;$a<=3;$a++){
-						echo color("yellow",".");
-						sleep(1);
-					}
-					sleep(3);
-					$goride1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"HEPIUPNORMAL"}');
-					$message2 = fetch_value($goride1,'"message":"','"');
-					echo "\n".color("green","+] Message: ".$message2);
-					sleep(3);
+					
+					
 					
 					$cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=10&page=1', $token);
 					$total = fetch_value($cekvoucher,'"total_vouchers":',',');
