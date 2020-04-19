@@ -93,7 +93,7 @@ echo color("green"," =================================== \n");
 						sleep(1);
 					}
 					sleep(3);
-					$goride = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"HEPIBROS"}');
+					$goride = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD160420A"}');
 					$message1 = fetch_value($goride,'"message":"','"');
 					echo "\n".color("green","+] Message: ".$message1);
 							
@@ -104,7 +104,7 @@ echo color("green"," =================================== \n");
 						sleep(1);
 					}
 					sleep(3);
-					$goride1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"GOFOODLAGI090320A"}');
+					$goride1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD160420B"}');
 					$message2 = fetch_value($goride1,'"message":"','"');
 					echo "\n".color("green","+] Message: ".$message2);
 					sleep(3);
