@@ -60,7 +60,7 @@ gema  "Waktu:" . date ( 'dmY || H: i: s' ). "\ n" ;
 				gema  "\ n" . warna ( "kuning" , "!] Harap tunggu ..." );
 				untuk ( $ a = 1 ; $ a <= 3 ; $ a ++) {
 					 warna gema ( "kuning" , "." );
-					tidur ( 1 );
+					tidur ( 3 );
 				}
 				$ code1 = permintaan ( '/ promosi-pergi / v1 / promosi / pendaftaran' , $ token , '{"promo_code": "COBAGOFOOD160420A"}' );
 				$ message = fetch_value ( $ code1 , '"message": "' , '"' );
@@ -74,7 +74,7 @@ gema  "Waktu:" . date ( 'dmY || H: i: s' ). "\ n" ;
 					gema  "\ n" . warna ( "kuning" , "!] Harap tunggu ..." );
 					untuk ( $ a = 1 ; $ a <= 3 ; $ a ++) {
 						 warna gema ( "kuning" , "." );
-						tidur ( 1 );
+						tidur ( 3 );
 					}
 					tidur ( 3 );
 					$ boba10 = permintaan ( '/ promosi-pergi / v1 / promosi / pendaftaran' , $ token , '{"promo_code": "COBAGOFOOD160420B"}' );
@@ -90,10 +90,10 @@ gema  "Waktu:" . date ( 'dmY || H: i: s' ). "\ n" ;
 					gema  "\ n" . warna ( "kuning" , "!] Harap tunggu ..." );
 					untuk ( $ a = 1 ; $ a <= 3 ; $ a ++) {
 						 warna gema ( "kuning" , "." );
-						tidur ( 1 );
+						tidur ( 3 );
 					}
 					tidur ( 3 );
-					$ goride = permintaan ( '/ pergi-promosi / v1 / promosi / pendaftaran' , $ token , '{"promo_code": "COBAINGOPAY"}' );
+					$ goride = permintaan ( '/ pergi-promosi / v1 / promosi / pendaftaran' , $ token , '{"promo_code": "COBAGOFOOD160420A"}' );
 					$ message1 = fetch_value ( $ goride , '"message": "' , '"' );
 					gema  "\ n" . color ( "green" , "+] Pesan:" . $ message1 );
 							
@@ -101,10 +101,10 @@ gema  "Waktu:" . date ( 'dmY || H: i: s' ). "\ n" ;
 					gema  "\ n" . warna ( "kuning" , "!] Harap tunggu ..." );
 					untuk ( $ a = 1 ; $ a <= 3 ; $ a ++) {
 						 warna gema ( "kuning" , "." );
-						tidur ( 1 );
+						tidur ( 3 );
 					}
 					tidur ( 3 );
-					$ goride1 = permintaan ( '/ promosi-pergi / v1 / promosi / pendaftaran' , $ token , '{"promo_code": "HEPIUPNORMAL"}' );
+					$ goride1 = permintaan ( '/ promosi-pergi / v1 / promosi / pendaftaran' , $ token , '{"promo_code": "COBAGOFOOD160420A"}' );
 					$ Message2 = fetch_value ( $ goride1 , ' "message": "' , '"' );
 					gema  "\ n" . color ( "green" , "+] Pesan:" . $ message2 );
 					tidur ( 3 );
